@@ -1,1 +1,1 @@
-# ehotel_project
+# eHotel Project ELCOM HCM
