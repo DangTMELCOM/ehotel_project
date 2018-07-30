@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# Note runlevel 2345, 86 is the Start order and 85 is the Stop order
+#
+# chkconfig: 2345 86 85
+# description: Description of the Service
+#
+# Below is the source function library, leave it be
+. /etc/init.d/functions
+
+# result of whereis forever or whereis node
+export PATH=$PATH:/usr/bin  
+# result of whereis node_modules
+export NODE_PATH=$NODE_PATH:/usr/lib/node_modules
+
+start(){  
+        forever --pidFile pid_3120.pid start /core/ehotel/service/app/service_modules/server_3120.js
+}
+
+stop(){  
+        forever stop /core/ehotel/service/app/service_modules/server_3120.js
+}
+
+restart(){  
+        forever restart /core/ehotel/service/app/service_modules/server_3120.js
+}
+
+case "$1" in  
+        start)
+                echo "Start Service 3120"
+                start
+                ;;
+        stop)
+                echo "Stop Service 3120"
+                stop
+                ;;
+        restart)
+                echo "Restart Service 3120"
+                restart
+                ;;
+        *)
+                echo "Usage: $0 {start|stop|restart}"
+                exit 1
+                ;;
+esac 

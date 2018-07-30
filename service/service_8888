@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# chkconfig: 345 80 81
+# description: Start/stop eodAgent for the named user.
+#
+# 1. Copy to /etc/init.d//apache-tomcat-6.0.29
+# 3. Make sure it is executable. For example:
+#
+#    chmod +x /etc/init.d//apache-tomcat-6.0.29
+#
+# 4. Add a supporting flag to chkconfig(1)'s database. For example:
+#
+#    /sbin/chkconfig --add /apache-tomcat-6.0.29
+#
+#    to have OVS enabled by default. The default run-level settings are
+#    configured below: see chkconfig(8).
+#
+#
+case "$1" in
+'start')
+    echo "Start SERVER 8888"
+    su - root -c "/core/ehotel/service/app/ehotel_modules/server_8888/bin/service_start"
+    ;;
+'stop')
+echo "Stop SERVER 8888"
+    su - root -c "/core/ehotel/service/app/ehotel_modules/server_8888/bin/service_stop"
+    ;;
+*)
+ echo "usage: $0 {start|stop}"
+;;
+esac
+					     

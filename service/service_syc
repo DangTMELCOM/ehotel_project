@@ -1,0 +1,12 @@
+#!/bin/sh
+ipAddr="ip addr show dev bond0"
+if $ipAddr | grep "172.16.9.113"
+then
+	echo "TRUE"
+	scp -P 22 -q /home/ehotel-modules/eHotelLG root@172.16.9.117:/core/ehotel/service/app/ehotel_modules/
+	scp -P 22 -q /home/esmile_modules/server_3000/index.js root@172.16.9.117:/core/ehotel/service/app/esmile_modules/server_3000/
+	ssh root@172.16.9.117 "service service_3000 restart"
+else
+	#Do nothing
+	echo "FALSE"
+fi
