@@ -1,0 +1,31 @@
+{
+  "name": "ehotel_modules",
+  "version": "1.0.0",
+  "description": "Project eHotel",
+  "main": "server_3120.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "cors": "^2.8.1",
+    "express": "^4.15.5",
+    "formidable": "^1.1.1",
+    "fs-extra": "^4.0.2",
+    "html-entities": "^1.2.1",
+    "less": "^2.7.1",
+    "mv": "^2.1.1",
+    "net": "^1.0.2",
+    "node-dir": "^0.1.17",
+    "node-fetch": "^2.2.0",
+    "node-ffprobe": "^1.2.2",
+    "nodemailer": "^4.6.4",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "request": "^2.74.0",
+    "soap": "^0.21.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DangTM",
+  "license": "ISC"
+}
